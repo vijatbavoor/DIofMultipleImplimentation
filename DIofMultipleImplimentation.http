@@ -1,0 +1,6 @@
+@DIofMultipleImplimentation_HostAddress = http://localhost:5128
+
+GET {{DIofMultipleImplimentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
