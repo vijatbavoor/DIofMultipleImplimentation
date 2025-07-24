@@ -10,9 +10,9 @@ public class FisClientServiceController(IEnumerable<IFisClient> fisClients) : Co
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [Route("/FisClientInfo")]
-    public IActionResult GetFisClientInfo(string paymentInstrument)
+    public IActionResult GetFisClientInfo(string paymentInstrument, string messageType)
     {
         var fisClinet = _fisClients.FirstOrDefault(p=> p.PaymentInstrument == paymentInstrument);
-        return Ok(fisClinet.SubmitToFis("pacs008"));
+        return Ok(fisClinet.SubmitToFis(messageType));
     }
 }
